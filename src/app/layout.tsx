@@ -71,7 +71,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en" suppressHydrationWarning>
       <head>
         <ThemeScript />
-        <script src="/register-sw.js" type="module" />
       </head>
       <body
         style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
