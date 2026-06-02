@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/providers/ThemeProvider";
 import { ThemeScript } from "@/components/shared/ThemeScript";
 import { Nav } from "@/components/shared/Nav";
 import { Footer } from "@/components/shared/Footer";
+import { UpdateToast } from "@/components/shared/UpdateToast";
 import {
   SITE_URL,
   SITE_NAME,
@@ -71,6 +72,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en" suppressHydrationWarning>
       <head>
         <ThemeScript />
+        <script src="/register-sw.js" type="module" />
       </head>
       <body
         style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
@@ -84,6 +86,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             {children}
           </main>
           <Footer />
+          <UpdateToast />
         </ThemeProvider>
       </body>
     </html>
