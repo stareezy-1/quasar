@@ -16,6 +16,7 @@ import {
   OG_IMAGE_PATH,
   OG_IMAGE_WIDTH,
   OG_IMAGE_HEIGHT,
+  GOOGLE_SITE_VERIFICATION,
 } from "@/constants/seo";
 import "./globals.css";
 
@@ -64,6 +65,9 @@ export const metadata: Metadata = {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
   },
   robots: { index: true, follow: true },
+  verification: {
+    google: GOOGLE_SITE_VERIFICATION,
+  },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

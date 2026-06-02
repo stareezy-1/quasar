@@ -28,3 +28,5 @@ export const AUTHOR_GITHUB = "https://github.com/stareezy-1";
 export const OG_IMAGE_PATH = "/og-image.svg";
 export const OG_IMAGE_WIDTH = 1200;
 export const OG_IMAGE_HEIGHT = 630;
+
+export const GOOGLE_SITE_VERIFICATION = "76720285c6e99e6d";
