@@ -11,23 +11,31 @@ if ("serviceWorker" in navigator) {
     navigator.serviceWorker
       .register("/sw.js")
       .then((registration) => {
-        // Detect when a new SW has installed and is waiting.
+        // When a new SW installs, tell it to skip waiting immediately — the
+        // user gets the update automatically on the next navigation without
+        // needing to press anything.
         registration.addEventListener("updatefound", () => {
           const newWorker = registration.installing;
           if (!newWorker) return;
           newWorker.addEventListener("statechange", () => {
-            if (
-              newWorker.state === "installed" &&
-              navigator.serviceWorker.controller
-            ) {
-              // New content available — notify the app.
-              window.dispatchEvent(new CustomEvent("sw-update-ready"));
+            if (newWorker.state === "installed") {
+              if (navigator.serviceWorker.controller) {
+                // New SW is waiting — tell it to activate right away.
+                newWorker.postMessage({ type: "SKIP_WAITING" });
+              }
             }
           });
         });
       })
-      .catch(() => {
-        // SW registration failed (e.g. dev mode, insecure origin). Silently ignore.
-      });
+      .catch(() => {});
+
+    // When the SW changes (new one took control), reload all clients so they
+    // immediately use the fresh cached assets.
+    let refreshing = false;
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (refreshing) return;
+      refreshing = true;
+      window.location.reload();
+    });
   });
 }

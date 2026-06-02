@@ -66,6 +66,38 @@ export function Nav() {
         >
           All Tools
         </Link>
+        <Link
+          href="/faq"
+          style={{
+            fontSize: "0.875rem",
+            fontWeight: 600,
+            color: "var(--color-text-secondary)",
+          }}
+        >
+          FAQ
+        </Link>
+        <a
+          href="https://stareezy.tech"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "0.3rem",
+            padding: "0.4rem 0.75rem",
+            borderRadius: "0.5rem",
+            border:
+              "1px solid color-mix(in srgb, var(--color-brand) 35%, transparent)",
+            backgroundColor:
+              "color-mix(in srgb, var(--color-brand) 8%, transparent)",
+            color: "var(--color-brand)",
+            fontSize: "0.8125rem",
+            fontWeight: 700,
+            textDecoration: "none",
+          }}
+        >
+          stareezy.tech ↗
+        </a>
         <ThemeControl />
       </div>
     </nav>

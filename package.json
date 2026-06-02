@@ -16,6 +16,7 @@
   "dependencies": {
     "fast-xml-parser": "^4.5.0",
     "js-yaml": "^4.1.0",
+    "lottie-web": "^5.12.2",
     "next": "^15.5.4",
     "papaparse": "^5.4.1",
     "react": "19.0.0",
