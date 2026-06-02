@@ -1,0 +1,23 @@
+{
+  "name": "Quasar — Data & Code Tools",
+  "short_name": "Quasar",
+  "description": "Privacy-first, offline-capable tools for JSON, XML, HTML, SQL, CSV, color, units, Base64, and text.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050508",
+  "theme_color": "#00ff88",
+  "icons": [
+    {
+      "src": "/icon-192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
