@@ -39,9 +39,7 @@ export default function HomePage() {
           padding: "0 1.5rem 4rem",
         }}
       >
-        <ScrollReveal variant="fade-up">
-          <ToolExplorer />
-        </ScrollReveal>
+        <ToolExplorer />
       </div>
     </div>
   );
