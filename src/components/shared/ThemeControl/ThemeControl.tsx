@@ -18,12 +18,14 @@ const PALETTE_COLORS: Record<ThemePalette, string> = {
   aurora: "#00ff88",
   dark: "#4a9eff",
   "steins-gate": "#e8dcc8",
+  quasar: "#ff6a1a",
 };
 
 const PALETTE_LABELS: Record<ThemePalette, string> = {
   aurora: "Aurora",
   dark: "Dark",
   "steins-gate": "Steins;Gate",
+  quasar: "Quasar",
 };
 
 const MODE_CYCLE: ThemeMode[] = ["dark", "light", "system"];

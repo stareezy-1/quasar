@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { ToolExplorer } from "@/components/home/ToolExplorer";
-import { ScrollReveal } from "@/components/shared/ScrollReveal";
 import { Hero } from "@/components/home/Hero";
 import { TOOL_COUNT } from "@/lib/registry";
 import { SITE_URL, SITE_NAME, SITE_DESCRIPTION } from "@/constants/seo";

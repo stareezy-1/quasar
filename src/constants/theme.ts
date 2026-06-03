@@ -1,7 +1,7 @@
 /** Theme constants — mirrors the next-gen-portfolio palette/mode system. */
 
 export type ThemeMode = "dark" | "light" | "system";
-export type ThemePalette = "aurora" | "dark" | "steins-gate";
+export type ThemePalette = "aurora" | "dark" | "steins-gate" | "quasar";
 
 export const THEME_STORAGE_KEYS = {
   mode: "quasar-theme-mode",
@@ -9,7 +9,7 @@ export const THEME_STORAGE_KEYS = {
 } as const;
 
 export const DEFAULT_THEME_MODE: ThemeMode = "dark";
-export const DEFAULT_THEME_PALETTE: ThemePalette = "aurora";
+export const DEFAULT_THEME_PALETTE: ThemePalette = "quasar";
 
 export const THEME_MODES: readonly ThemeMode[] = [
   "dark",
@@ -21,6 +21,7 @@ export const THEME_PALETTES: readonly ThemePalette[] = [
   "aurora",
   "dark",
   "steins-gate",
+  "quasar",
 ] as const;
 
 export const THEME_DATA_ATTRIBUTES = {

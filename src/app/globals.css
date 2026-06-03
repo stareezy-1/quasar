@@ -101,6 +101,39 @@
   --color-success: #1a7a6e;
 }
 
+/* ── Quasar — dark (blazing plasma jet on deep space) ───────────────────── */
+:root[data-palette="quasar"][data-theme="dark"],
+:root[data-palette="quasar"] {
+  --color-background: #020205;
+  --color-surface: #0d0508;
+  --color-surface-elevated: #160a0e;
+  --color-brand: #ff6a1a;
+  --color-accent: #dc143c;
+  --color-text-primary: #f8f0e8;
+  --color-text-secondary: #b09080;
+  --color-text-muted: #6a5048;
+  --color-border: #2a100a;
+  --color-error: #ff3355;
+  --color-warning: #f5a623;
+  --color-success: #22c55e;
+}
+
+/* ── Quasar — light (ember glow on ivory) ───────────────────────────────── */
+:root[data-palette="quasar"][data-theme="light"] {
+  --color-background: #fdf6f0;
+  --color-surface: #f5ebe0;
+  --color-surface-elevated: #ffffff;
+  --color-brand: #c94a00;
+  --color-accent: #a8001e;
+  --color-text-primary: #1a0c08;
+  --color-text-secondary: #5a3020;
+  --color-text-muted: #8a6050;
+  --color-border: #e0c8b8;
+  --color-error: #c0002a;
+  --color-warning: #c97000;
+  --color-success: #16a34a;
+}
+
 /* ── Reset & base ───────────────────────────────────────────────────────── */
 *,
 *::before,
@@ -310,6 +343,16 @@ select:focus {
   }
   50% {
     opacity: 0;
+  }
+}
+
+/* ── Nav responsive ─────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .nav-desktop {
+    display: none !important;
+  }
+  .nav-mobile-btn {
+    display: flex !important;
   }
 }
 

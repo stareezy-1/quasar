@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import type React from "react";
 import Link from "next/link";
 import { SITE_URL } from "@/constants/seo";
 import { ROUTES } from "@/constants/routes";
+import { FaqAccordion } from "@/components/home/FaqAccordion";
 
 export const metadata: Metadata = {
   title: "FAQ — Quasar",
@@ -10,12 +12,12 @@ export const metadata: Metadata = {
   alternates: { canonical: `${SITE_URL}/faq` },
 };
 
-interface FaqItem {
+export interface FaqItem {
   q: string;
-  a: string | React.ReactNode;
+  a: React.ReactNode;
 }
 
-const FAQS: FaqItem[] = [
+export const FAQS: FaqItem[] = [
   {
     q: "Is Quasar really free?",
     a: "Yes, completely. There's no free tier, no paid plan, no sign-up. Every tool is free forever.",
@@ -30,7 +32,7 @@ const FAQS: FaqItem[] = [
   },
   {
     q: "Does Quasar work offline?",
-    a: "Yes. After your first visit, Quasar is cached by a service worker. You can use every tool without an internet connection. The app also installs as a PWA (Add to Home Screen) on mobile and desktop.",
+    a: "Yes. After your first visit, Quasar is cached by a service worker. You can use every tool without an internet connection. The app also installs as a PWA on mobile and desktop.",
   },
   {
     q: "How does the save system work?",
@@ -42,7 +44,7 @@ const FAQS: FaqItem[] = [
   },
   {
     q: "Which color formats are supported?",
-    a: "HEX, RGB, HSL, HSV, CMYK, and Colortone (CSS named colors). Every combination is available — 30 converters total.",
+    a: "HEX, RGB, HSL, HSV, CMYK, and CSS named colors. Every combination is available — 30 converters total.",
   },
   {
     q: "Which unit categories are available?",
@@ -95,8 +97,8 @@ const FAQS: FaqItem[] = [
         >
           Bintang (stareezy.tech)
         </a>{" "}
-        — a front-end & mobile engineer. It&apos;s part of the Stareezy
-        ecosystem alongside{" "}
+        — a front-end &amp; mobile engineer. Part of the Stareezy ecosystem
+        alongside{" "}
         <a
           href="https://aurora.stareezy.tech"
           target="_blank"
@@ -122,7 +124,7 @@ const FAQS: FaqItem[] = [
     q: "Is the source code available?",
     a: (
       <>
-        Yes — it&apos;s open source on{" "}
+        Yes — open source on{" "}
         <a
           href="https://github.com/stareezy-1/quasar"
           target="_blank"
@@ -136,45 +138,6 @@ const FAQS: FaqItem[] = [
     ),
   },
 ];
-
-import type React from "react";
-
-function FaqItem({ q, a }: FaqItem) {
-  return (
-    <div
-      style={{
-        padding: "1.5rem",
-        borderRadius: "0.75rem",
-        border: "1px solid var(--color-border)",
-        backgroundColor: "var(--color-surface)",
-        display: "flex",
-        flexDirection: "column",
-        gap: "0.625rem",
-      }}
-    >
-      <h2
-        style={{
-          fontSize: "1rem",
-          fontWeight: 700,
-          color: "var(--color-text-primary)",
-          margin: 0,
-        }}
-      >
-        {q}
-      </h2>
-      <p
-        style={{
-          fontSize: "0.9375rem",
-          color: "var(--color-text-secondary)",
-          lineHeight: 1.7,
-          margin: 0,
-        }}
-      >
-        {a}
-      </p>
-    </div>
-  );
-}
 
 export default function FaqPage() {
   return (
@@ -243,11 +206,7 @@ export default function FaqPage() {
         </p>
       </header>
 
-      <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
-        {FAQS.map((item) => (
-          <FaqItem key={item.q} q={item.q} a={item.a} />
-        ))}
-      </div>
+      <FaqAccordion items={FAQS} />
 
       {/* CTA */}
       <div

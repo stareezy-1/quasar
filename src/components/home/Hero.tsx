@@ -24,31 +24,33 @@ export function Hero({ toolCount }: { toolCount: number }) {
       }}
     >
       {/* ── Background decorations ─────────────────────────────────────── */}
+      {/* Deep space glow — top-right, brand (plasma orange) */}
       <div
         aria-hidden="true"
         style={{
           position: "absolute",
-          top: "-20%",
-          right: "-5%",
-          width: "600px",
-          height: "600px",
+          top: "-15%",
+          right: "-8%",
+          width: "640px",
+          height: "640px",
           borderRadius: "50%",
           background:
-            "radial-gradient(circle, color-mix(in srgb, var(--color-brand) 12%, transparent) 0%, transparent 70%)",
+            "radial-gradient(circle, color-mix(in srgb, var(--color-brand) 14%, transparent) 0%, transparent 65%)",
           pointerEvents: "none",
         }}
       />
+      {/* Accretion halo — bottom-left, accent (crimson) */}
       <div
         aria-hidden="true"
         style={{
           position: "absolute",
-          bottom: "-20%",
-          left: "-5%",
-          width: "500px",
-          height: "500px",
+          bottom: "-25%",
+          left: "-8%",
+          width: "560px",
+          height: "560px",
           borderRadius: "50%",
           background:
-            "radial-gradient(circle, color-mix(in srgb, var(--color-accent) 8%, transparent) 0%, transparent 70%)",
+            "radial-gradient(circle, color-mix(in srgb, var(--color-accent) 10%, transparent) 0%, transparent 65%)",
           pointerEvents: "none",
         }}
       />
@@ -61,45 +63,54 @@ export function Hero({ toolCount }: { toolCount: number }) {
           backgroundImage:
             "linear-gradient(var(--color-border) 1px, transparent 1px), linear-gradient(90deg, var(--color-border) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
-          opacity: 0.25,
+          opacity: 0.2,
           pointerEvents: "none",
         }}
       />
 
       {/* ── Lottie decorations ────────────────────────────────────────── */}
+      {/* Primary: quasar accretion disk — large, centred-right */}
       <div
         aria-hidden="true"
-        style={{ position: "absolute", right: "2%", bottom: "5%", zIndex: 0 }}
+        style={{
+          position: "absolute",
+          top: "50%",
+          right: "-4%",
+          transform: "translateY(-50%)",
+          zIndex: 0,
+        }}
       >
         <LottiePlayer
-          src="/lottie/orbit-rings.json"
-          width={260}
-          height={260}
-          opacity={0.12}
+          src="/lottie/quasar-accretion.json"
+          width={420}
+          height={420}
+          opacity={0.18}
           decorative
         />
       </div>
-      <div
-        aria-hidden="true"
-        style={{ position: "absolute", left: "1%", top: "8%", zIndex: 0 }}
-      >
-        <LottiePlayer
-          src="/lottie/floating-shapes.json"
-          width={200}
-          height={200}
-          opacity={0.1}
-          decorative
-        />
-      </div>
+      {/* Secondary sparkle — upper-mid */}
       <div
         aria-hidden="true"
         style={{ position: "absolute", left: "28%", top: "0%", zIndex: 0 }}
       >
         <LottiePlayer
           src="/lottie/stars-sparkle.json"
-          width={340}
-          height={340}
-          opacity={0.14}
+          width={300}
+          height={300}
+          opacity={0.12}
+          decorative
+        />
+      </div>
+      {/* Tertiary orbit rings — bottom-left */}
+      <div
+        aria-hidden="true"
+        style={{ position: "absolute", left: "0%", bottom: "0%", zIndex: 0 }}
+      >
+        <LottiePlayer
+          src="/lottie/orbit-rings.json"
+          width={220}
+          height={220}
+          opacity={0.1}
           decorative
         />
       </div>
