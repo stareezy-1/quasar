@@ -17,7 +17,7 @@ export interface FaqItem {
   a: React.ReactNode;
 }
 
-export const FAQS: FaqItem[] = [
+const FAQS: FaqItem[] = [
   {
     q: "Is Quasar really free?",
     a: "Yes, completely. There's no free tier, no paid plan, no sign-up. Every tool is free forever.",
