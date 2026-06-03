@@ -17,7 +17,10 @@ export type UnitCategory =
   | "time"
   | "temperature"
   | "speed"
-  | "data";
+  | "data"
+  | "pressure"
+  | "energy"
+  | "angle";
 
 export interface UnitDef {
   id: string;
@@ -146,9 +149,55 @@ export const UNIT_CATEGORIES: Record<UnitCategory, CategoryDef> = {
       { id: "k", label: "Kelvin", factor: 1 },
     ],
   },
+  pressure: {
+    id: "pressure",
+    label: "Pressure",
+    baseUnit: "pa",
+    units: [
+      { id: "pa", label: "Pascal", factor: 1 },
+      { id: "kpa", label: "Kilopascal", factor: 1000 },
+      { id: "mpa", label: "Megapascal", factor: 1_000_000 },
+      { id: "bar", label: "Bar", factor: 100_000 },
+      { id: "mbar", label: "Millibar", factor: 100 },
+      { id: "psi", label: "PSI", factor: 6894.757 },
+      { id: "atm", label: "Atmosphere", factor: 101_325 },
+      { id: "torr", label: "Torr", factor: 133.322 },
+    ],
+  },
+  energy: {
+    id: "energy",
+    label: "Energy",
+    baseUnit: "j",
+    units: [
+      { id: "j", label: "Joule", factor: 1 },
+      { id: "kj", label: "Kilojoule", factor: 1000 },
+      { id: "cal", label: "Calorie", factor: 4.184 },
+      { id: "kcal", label: "Kilocalorie", factor: 4184 },
+      { id: "wh", label: "Watt-hour", factor: 3600 },
+      { id: "kwh", label: "Kilowatt-hour", factor: 3_600_000 },
+      { id: "ev", label: "Electronvolt", factor: 1.602176634e-19 },
+      { id: "btu", label: "BTU", factor: 1055.056 },
+      { id: "ftlb", label: "Foot-pound", factor: 1.355818 },
+    ],
+  },
+  angle: {
+    id: "angle",
+    label: "Angle",
+    baseUnit: "deg",
+    units: [
+      { id: "deg", label: "Degree", factor: 1 },
+      { id: "rad", label: "Radian", factor: 180 / Math.PI },
+      { id: "grad", label: "Gradian", factor: 0.9 },
+      { id: "mrad", label: "Milliradian", factor: 180 / (Math.PI * 1000) },
+      { id: "turn", label: "Turn", factor: 360 },
+      { id: "arcmin", label: "Arcminute", factor: 1 / 60 },
+      { id: "arcsec", label: "Arcsecond", factor: 1 / 3600 },
+    ],
+  },
 };
 
-/** Convert temperature between c/f/k. */
+/** Export timestamp utilities */
+export * from "./timestamp";
 function convertTemperature(value: number, from: string, to: string): number {
   // Normalize to Celsius first.
   let c: number;

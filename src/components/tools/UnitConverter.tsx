@@ -25,6 +25,9 @@ function categoryFromId(id: string): UnitCategory {
     "temperature-converter": "temperature",
     "speed-converter": "speed",
     "data-storage-converter": "data",
+    "pressure-converter": "pressure",
+    "energy-converter": "energy",
+    "angle-converter": "angle",
   };
   return map[id] ?? "length";
 }

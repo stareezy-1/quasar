@@ -18,10 +18,13 @@ import { useStandardTool } from "@/hooks";
 import { type EngineResult } from "@/types/engines";
 import { sqlToRows } from "@/lib/engines/sql";
 import { serializeData, type DataFormat } from "@/lib/engines/data";
+import { generateHtmlTable } from "@/lib/engines/html";
 
 function targetFromId(id: string): DataFormat {
   const target = id.split("-").pop();
-  return (target ?? "json") as DataFormat;
+  const validFormats: DataFormat[] = ["json", "csv", "xml", "yaml", "tsv"];
+  if (validFormats.includes(target as DataFormat)) return target as DataFormat;
+  return "json";
 }
 
 export default function SqlConverter() {
@@ -32,9 +35,26 @@ export default function SqlConverter() {
     (input: string): EngineResult<string> => {
       const rows = sqlToRows(input);
       if (!rows.ok) return rows;
+      // sql-to-html: generate an HTML table directly from rows
+      if (tool.id === "sql-to-html") {
+        // Convert rows to CSV string then pass to HTML table generator
+        const headers = rows.value.length ? Object.keys(rows.value[0]!) : [];
+        const csvLines = [
+          headers.join(","),
+          ...rows.value.map((r) =>
+            headers
+              .map((h) => {
+                const v = String(r[h] ?? "");
+                return v.includes(",") ? `"${v.replace(/"/g, '""')}"` : v;
+              })
+              .join(","),
+          ),
+        ];
+        return generateHtmlTable(csvLines.join("\n"));
+      }
       return serializeData(rows.value, target);
     },
-    [target],
+    [target, tool.id],
   );
 
   const { input, setInput, output, error, clear, sessions, save, load } =

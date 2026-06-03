@@ -6,3 +6,6 @@ export * as unit from "./unit";
 export * as diff from "./diff";
 export * as html from "./html";
 export * as sql from "./sql";
+export * as image from "./image";
+export * as jsonpath from "./jsonpath";
+export * as xpath from "./xpath";
