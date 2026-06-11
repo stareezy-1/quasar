@@ -94,21 +94,21 @@ export function Nav() {
         >
           <span
             aria-hidden="true"
-            className="spin-slow"
             style={{
               display: "inline-block",
-              width: "18px",
-              height: "18px",
+              width: "16px",
+              height: "16px",
               borderRadius: "50%",
               background:
-                "conic-gradient(from 0deg, var(--color-brand), var(--color-accent), var(--color-brand))",
+                "radial-gradient(circle at 35% 35%, var(--color-brand), var(--color-accent))",
             }}
           />
           <span
             style={{
-              fontWeight: 800,
+              fontFamily: "var(--font-display), sans-serif",
+              fontWeight: 700,
               fontSize: "1.125rem",
-              letterSpacing: "-0.02em",
+              letterSpacing: "-0.03em",
               color: "var(--color-text-primary)",
             }}
           >

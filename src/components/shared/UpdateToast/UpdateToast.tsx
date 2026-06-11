@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * UpdateToast — listens for the "sw-update-ready" event dispatched by
+ * UpdateToast - listens for the "sw-update-ready" event dispatched by
  * register-sw.js and prompts the user to reload for the new version.
  */
 
@@ -50,7 +50,7 @@ export function UpdateToast() {
           padding: "0.375rem 0.75rem",
           borderRadius: "0.5rem",
           backgroundColor: "var(--color-brand)",
-          color: "var(--color-background)",
+          color: "var(--color-on-brand)",
           border: "none",
           fontWeight: 700,
           fontSize: "0.8125rem",

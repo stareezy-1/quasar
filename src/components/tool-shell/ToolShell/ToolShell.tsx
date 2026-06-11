@@ -1,5 +1,5 @@
 /**
- * ToolShell — the consistent layout wrapper for every tool. Renders the title,
+ * ToolShell - the consistent layout wrapper for every tool. Renders the title,
  * description, an optional toolbar, the tool body (children), an error banner,
  * optional stats, and an optional sessions panel.
  *

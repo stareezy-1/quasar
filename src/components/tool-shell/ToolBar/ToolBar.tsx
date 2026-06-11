@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * ToolBar — the standard row of actions every tool shares: copy output,
+ * ToolBar - the standard row of actions every tool shares: copy output,
  * download, clear input, and save a session. Tools can pass extra controls via
  * `extra` (rendered on the left).
  */
@@ -17,9 +17,9 @@ export interface ToolBarProps {
   downloadName?: string;
   /** MIME type for download. */
   downloadMime?: string;
-  /** Clear handler — typically clears the input. */
+  /** Clear handler - typically clears the input. */
   onClear?: () => void;
-  /** Save handler — receives nothing; the tool snapshots its own state. */
+  /** Save handler - receives nothing; the tool snapshots its own state. */
   onSave?: () => void;
   /** Extra controls rendered at the start of the bar. */
   extra?: ReactNode;

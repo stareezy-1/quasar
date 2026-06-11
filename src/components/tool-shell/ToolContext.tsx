@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * ToolContext — provides the active ToolMeta to generic tool components so a
+ * ToolContext - provides the active ToolMeta to generic tool components so a
  * single component (e.g. ColorConverter) can self-configure from the tool id
  * (e.g. "hex-to-rgb").
  */

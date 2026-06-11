@@ -24,7 +24,7 @@ export default function NotFound() {
           padding: "0.625rem 1.25rem",
           borderRadius: "0.5rem",
           backgroundColor: "var(--color-brand)",
-          color: "var(--color-background)",
+          color: "var(--color-on-brand)",
           fontWeight: 700,
         }}
       >

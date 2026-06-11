@@ -1,11 +1,13 @@
 "use client";
 
 /**
- * Hero — home page hero section. Inspired by aurora-pdf's floating asset
- * pattern and next-gen-portfolio's lottie decoration approach.
+ * Hero — home page hero.
  *
- * Left: badge + headline + description + CTAs + stats
- * Right: floating code/data card with decorative lottie layers
+ * Direction: "Quasar" is a blazing plasma jet from a galactic core, so the
+ * identity earns a confident orange + crimson duo on a tinted ember-black.
+ * The hero states what the suite does, with a monospace spec rail and one
+ * deliberate accretion-disk Lottie as the single orchestrated motion moment.
+ * No shimmer gradient text, no fake JSON window built from divs.
  */
 
 import Link from "next/link";
@@ -20,102 +22,26 @@ export function Hero({ toolCount }: { toolCount: number }) {
       style={{
         position: "relative",
         overflow: "hidden",
-        padding: "clamp(48px, 8vw, 96px) 1.5rem clamp(56px, 8vw, 96px)",
+        padding: "clamp(56px, 9vw, 104px) 1.5rem clamp(48px, 7vw, 88px)",
       }}
     >
-      {/* ── Background decorations ─────────────────────────────────────── */}
-      {/* Deep space glow — top-right, brand (plasma orange) */}
+      {/* Single soft brand glow, top-right (one, not three) */}
       <div
         aria-hidden="true"
         style={{
           position: "absolute",
-          top: "-15%",
-          right: "-8%",
+          top: "-20%",
+          right: "-10%",
           width: "640px",
           height: "640px",
           borderRadius: "50%",
           background:
-            "radial-gradient(circle, color-mix(in srgb, var(--color-brand) 14%, transparent) 0%, transparent 65%)",
+            "radial-gradient(circle, color-mix(in srgb, var(--color-brand) 12%, transparent) 0%, transparent 62%)",
           pointerEvents: "none",
-        }}
-      />
-      {/* Accretion halo — bottom-left, accent (crimson) */}
-      <div
-        aria-hidden="true"
-        style={{
-          position: "absolute",
-          bottom: "-25%",
-          left: "-8%",
-          width: "560px",
-          height: "560px",
-          borderRadius: "50%",
-          background:
-            "radial-gradient(circle, color-mix(in srgb, var(--color-accent) 10%, transparent) 0%, transparent 65%)",
-          pointerEvents: "none",
-        }}
-      />
-      {/* Dot-grid overlay */}
-      <div
-        aria-hidden="true"
-        style={{
-          position: "absolute",
-          inset: 0,
-          backgroundImage:
-            "linear-gradient(var(--color-border) 1px, transparent 1px), linear-gradient(90deg, var(--color-border) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-          opacity: 0.2,
-          pointerEvents: "none",
-        }}
-      />
-
-      {/* ── Lottie decorations ────────────────────────────────────────── */}
-      {/* Primary: quasar accretion disk — large, centred-right */}
-      <div
-        aria-hidden="true"
-        style={{
-          position: "absolute",
-          top: "50%",
-          right: "-4%",
-          transform: "translateY(-50%)",
           zIndex: 0,
         }}
-      >
-        <LottiePlayer
-          src="/lottie/quasar-accretion.json"
-          width={420}
-          height={420}
-          opacity={0.18}
-          decorative
-        />
-      </div>
-      {/* Secondary sparkle — upper-mid */}
-      <div
-        aria-hidden="true"
-        style={{ position: "absolute", left: "28%", top: "0%", zIndex: 0 }}
-      >
-        <LottiePlayer
-          src="/lottie/stars-sparkle.json"
-          width={300}
-          height={300}
-          opacity={0.12}
-          decorative
-        />
-      </div>
-      {/* Tertiary orbit rings — bottom-left */}
-      <div
-        aria-hidden="true"
-        style={{ position: "absolute", left: "0%", bottom: "0%", zIndex: 0 }}
-      >
-        <LottiePlayer
-          src="/lottie/orbit-rings.json"
-          width={220}
-          height={220}
-          opacity={0.1}
-          decorative
-        />
-      </div>
+      />
 
-      {/* ── Content ───────────────────────────────────────────────────── */}
       <div
         style={{
           maxWidth: "1100px",
@@ -123,7 +49,7 @@ export function Hero({ toolCount }: { toolCount: number }) {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          gap: "3rem",
+          gap: "3.5rem",
           flexWrap: "wrap",
           position: "relative",
           zIndex: 1,
@@ -132,99 +58,96 @@ export function Hero({ toolCount }: { toolCount: number }) {
         {/* Left: text */}
         <div
           style={{
-            flex: "1 1 400px",
-            maxWidth: "560px",
+            flex: "1 1 440px",
+            maxWidth: "600px",
             display: "flex",
             flexDirection: "column",
-            gap: "1.25rem",
+            gap: "1.5rem",
           }}
         >
-          <ScrollReveal variant="fade-down">
-            <div
+          {/* Mono spec rail */}
+          <ScrollReveal variant="fade-up">
+            <ul
+              aria-label="At a glance"
               style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "0.5rem",
-                padding: "0.375rem 0.875rem",
-                borderRadius: "9999px",
-                backgroundColor:
-                  "color-mix(in srgb, var(--color-brand) 10%, transparent)",
-                border:
-                  "1px solid color-mix(in srgb, var(--color-brand) 25%, transparent)",
-                fontSize: "0.75rem",
-                fontWeight: 700,
-                color: "var(--color-brand)",
-                letterSpacing: "0.05em",
-                textTransform: "uppercase",
-                width: "fit-content",
+                listStyle: "none",
+                margin: 0,
+                padding: "0 0 0 1rem",
+                borderLeft: "2px solid var(--color-brand)",
+                display: "flex",
+                flexDirection: "column",
+                gap: "0.4rem",
+                fontFamily: "var(--font-mono), monospace",
+                fontSize: "0.8125rem",
               }}
             >
-              <span
-                style={{
-                  width: "6px",
-                  height: "6px",
-                  borderRadius: "50%",
-                  backgroundColor: "var(--color-brand)",
-                  boxShadow: "0 0 8px var(--color-brand)",
-                  display: "inline-block",
-                  animation: "pulse-glow 2s ease-in-out infinite",
-                }}
-              />
-              Free · Privacy-first · Offline
-            </div>
+              {[
+                { k: "tools", v: `${toolCount}+ data & code utilities` },
+                { k: "runtime", v: "your browser, fully offline" },
+                { k: "cost", v: "free, no account, no upload" },
+              ].map((r) => (
+                <li
+                  key={r.k}
+                  style={{
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "baseline",
+                  }}
+                >
+                  <span
+                    style={{
+                      color: "var(--color-text-muted)",
+                      minWidth: "4rem",
+                    }}
+                  >
+                    {r.k}
+                  </span>
+                  <span style={{ color: "var(--color-text-secondary)" }}>
+                    {r.v}
+                  </span>
+                </li>
+              ))}
+            </ul>
           </ScrollReveal>
 
+          {/* Headline */}
           <ScrollReveal variant="fade-up" delay={1}>
             <h1
               id="hero-heading"
               style={{
-                fontSize: "clamp(2rem, 5.5vw, 3.75rem)",
-                fontWeight: 900,
-                lineHeight: 1.05,
-                letterSpacing: "-0.03em",
+                fontFamily: "var(--font-display), sans-serif",
+                fontSize: "clamp(2.25rem, 6vw, 4rem)",
+                fontWeight: 600,
+                lineHeight: 1.0,
+                letterSpacing: "-0.04em",
                 margin: 0,
+                color: "var(--color-text-primary)",
               }}
             >
-              <span className="shimmer-text">All-in-One</span>
-              <br />
-              Data &amp; Code Tools
+              Every dev tool you{" "}
+              <span style={{ color: "var(--color-brand)" }}>reach for</span>, in
+              one tab.
             </h1>
           </ScrollReveal>
 
+          {/* Description */}
           <ScrollReveal variant="fade-up" delay={2}>
             <p
               style={{
                 color: "var(--color-text-secondary)",
-                fontSize: "clamp(0.9375rem, 1.5vw, 1.125rem)",
-                lineHeight: 1.75,
+                fontSize: "clamp(1rem, 1.5vw, 1.1875rem)",
+                lineHeight: 1.7,
                 margin: 0,
+                maxWidth: "52ch",
               }}
             >
-              {toolCount}+ tools for{" "}
-              <strong style={{ color: "var(--color-text-primary)" }}>
-                JSON
-              </strong>
-              ,{" "}
-              <strong style={{ color: "var(--color-text-primary)" }}>
-                XML
-              </strong>
-              ,{" "}
-              <strong style={{ color: "var(--color-text-primary)" }}>
-                color
-              </strong>
-              ,{" "}
-              <strong style={{ color: "var(--color-text-primary)" }}>
-                units
-              </strong>
-              ,{" "}
-              <strong style={{ color: "var(--color-text-primary)" }}>
-                HTML
-              </strong>
-              , and more. Everything runs in your browser — no upload, no
-              account.
+              Format JSON, convert XML, pick colors, diff text, encode, and
+              more. {toolCount}+ utilities that run entirely in your browser.
+              Nothing is uploaded, nothing is tracked.
             </p>
           </ScrollReveal>
 
+          {/* CTAs */}
           <ScrollReveal variant="fade-up" delay={3}>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem" }}>
               <Link
@@ -233,15 +156,14 @@ export function Hero({ toolCount }: { toolCount: number }) {
                   display: "inline-flex",
                   alignItems: "center",
                   gap: "0.4rem",
-                  padding: "0.75rem 1.5rem",
-                  borderRadius: "0.5rem",
+                  padding: "0.8125rem 1.75rem",
+                  borderRadius: "8px",
                   backgroundColor: "var(--color-brand)",
-                  color: "var(--color-background)",
-                  fontWeight: 700,
+                  color: "var(--color-on-brand)",
+                  fontFamily: "var(--font-display), sans-serif",
+                  fontWeight: 600,
                   fontSize: "0.9375rem",
                   textDecoration: "none",
-                  boxShadow:
-                    "0 4px 20px color-mix(in srgb, var(--color-brand) 30%, transparent)",
                 }}
               >
                 Browse {toolCount}+ tools →
@@ -252,19 +174,18 @@ export function Hero({ toolCount }: { toolCount: number }) {
                   display: "inline-flex",
                   alignItems: "center",
                   gap: "0.4rem",
-                  padding: "0.75rem 1.5rem",
-                  borderRadius: "0.5rem",
+                  padding: "0.8125rem 1.75rem",
+                  borderRadius: "8px",
                   border: "1px solid var(--color-border)",
-                  backgroundColor:
-                    "color-mix(in srgb, var(--color-surface) 80%, transparent)",
+                  backgroundColor: "transparent",
                   color: "var(--color-text-primary)",
+                  fontFamily: "var(--font-display), sans-serif",
                   fontWeight: 600,
                   fontSize: "0.9375rem",
                   textDecoration: "none",
-                  backdropFilter: "blur(8px)",
                 }}
               >
-                Try JSON Formatter
+                Open JSON Formatter
               </Link>
             </div>
           </ScrollReveal>
@@ -275,8 +196,8 @@ export function Hero({ toolCount }: { toolCount: number }) {
               style={{
                 display: "flex",
                 flexWrap: "wrap",
-                gap: "1.5rem",
-                paddingTop: "1.25rem",
+                gap: "2rem",
+                paddingTop: "1.5rem",
                 borderTop: "1px solid var(--color-border)",
               }}
             >
@@ -284,33 +205,35 @@ export function Hero({ toolCount }: { toolCount: number }) {
                 { value: `${toolCount}+`, label: "Tools" },
                 { value: "100%", label: "Client-side" },
                 { value: "0", label: "Uploads" },
-                { value: "0", label: "Accounts" },
               ].map((s) => (
                 <div
                   key={s.label}
                   style={{
                     display: "flex",
                     flexDirection: "column",
-                    gap: "0.2rem",
+                    gap: "0.25rem",
                   }}
                 >
                   <span
                     style={{
-                      fontSize: "1.5rem",
-                      fontWeight: 800,
+                      fontFamily: "var(--font-display), sans-serif",
+                      fontSize: "1.75rem",
+                      fontWeight: 700,
                       color: "var(--color-brand)",
                       lineHeight: 1,
-                      letterSpacing: "-0.02em",
+                      letterSpacing: "-0.03em",
+                      fontVariantNumeric: "tabular-nums",
                     }}
                   >
                     {s.value}
                   </span>
                   <span
                     style={{
-                      fontSize: "0.7rem",
+                      fontSize: "0.6875rem",
                       color: "var(--color-text-muted)",
                       textTransform: "uppercase",
-                      letterSpacing: "0.07em",
+                      letterSpacing: "0.08em",
+                      fontFamily: "var(--font-mono), monospace",
                     }}
                   >
                     {s.label}
@@ -321,187 +244,30 @@ export function Hero({ toolCount }: { toolCount: number }) {
           </ScrollReveal>
         </div>
 
-        {/* Right: floating data card */}
+        {/* Right: the single orchestrated motion moment — accretion disk */}
         <ScrollReveal variant="zoom" delay={2}>
-          <FloatingDataCard />
-        </ScrollReveal>
-      </div>
-    </section>
-  );
-}
-
-/** Decorative floating card mimicking aurora-pdf's style — no real tool logic. */
-function FloatingDataCard() {
-  return (
-    <div
-      aria-hidden="true"
-      className="hero-float"
-      style={{ position: "relative", width: "300px", flexShrink: 0 }}
-    >
-      {/* Glow behind card */}
-      <div
-        style={{
-          position: "absolute",
-          inset: "-40px",
-          borderRadius: "50%",
-          background:
-            "radial-gradient(ellipse at center, color-mix(in srgb, var(--color-brand) 15%, transparent) 0%, transparent 70%)",
-          animation: "pulse-glow 3s ease-in-out infinite",
-        }}
-      />
-      {/* Card shadow layer */}
-      <div
-        style={{
-          position: "absolute",
-          top: "20px",
-          left: "20px",
-          right: "-8px",
-          bottom: "-8px",
-          backgroundColor: "var(--color-surface-elevated)",
-          borderRadius: "1.25rem",
-          border: "1px solid var(--color-border)",
-          transform: "rotate(3deg)",
-        }}
-      />
-      {/* Main card */}
-      <div
-        style={{
-          position: "relative",
-          backgroundColor: "var(--color-surface)",
-          border: "1px solid var(--color-border)",
-          borderRadius: "1.25rem",
-          overflow: "hidden",
-          boxShadow:
-            "0 24px 64px color-mix(in srgb, var(--color-background) 60%, transparent)",
-        }}
-      >
-        {/* Window chrome */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "0.5rem",
-            padding: "0.75rem 1rem",
-            backgroundColor: "var(--color-surface-elevated)",
-            borderBottom: "1px solid var(--color-border)",
-          }}
-        >
-          {["#ff5f57", "#febc2e", "#28c840"].map((c) => (
-            <span
-              key={c}
-              style={{
-                width: "10px",
-                height: "10px",
-                borderRadius: "50%",
-                backgroundColor: c,
-              }}
-            />
-          ))}
-          <span
+          <div
+            aria-hidden="true"
             style={{
-              marginLeft: "0.4rem",
-              fontSize: "0.75rem",
-              color: "var(--color-text-muted)",
+              position: "relative",
+              width: "clamp(240px, 34vw, 360px)",
+              aspectRatio: "1 / 1",
+              flexShrink: 0,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
-            quasar.json
-          </span>
-          {/* Lottie inside card */}
-          <div style={{ marginLeft: "auto" }}>
             <LottiePlayer
-              src="/lottie/wave-lines.json"
-              width={48}
-              height={20}
-              opacity={0.5}
+              src="/lottie/quasar-accretion.json"
+              width={360}
+              height={360}
+              opacity={0.9}
               decorative
             />
           </div>
-        </div>
-        {/* JSON content */}
-        <div
-          className="mono"
-          style={{
-            padding: "1.25rem",
-            fontSize: "0.8125rem",
-            lineHeight: 1.8,
-          }}
-        >
-          <div>
-            <span style={{ color: "#f59e0b" }}>{"{"}</span>
-          </div>
-          {[
-            { k: "name", v: '"quasar"', vc: "#34d399" },
-            { k: "tools", v: '"70+"', vc: "#34d399" },
-            { k: "offline", v: "true", vc: "var(--color-brand)" },
-            { k: "upload", v: "false", vc: "var(--color-error)" },
-            { k: "account", v: "false", vc: "var(--color-error)" },
-          ].map(({ k, v, vc }) => (
-            <div key={k} style={{ paddingLeft: "1.25rem" }}>
-              <span style={{ color: "var(--color-text-secondary)" }}>
-                "{k}"
-              </span>
-              <span style={{ color: "var(--color-text-muted)" }}>: </span>
-              <span style={{ color: vc }}>{v}</span>
-              <span style={{ color: "var(--color-text-muted)" }}>,</span>
-            </div>
-          ))}
-          <div>
-            <span style={{ color: "#f59e0b" }}>{"}"}</span>
-          </div>
-          <div style={{ marginTop: "0.375rem" }}>
-            <span style={{ color: "var(--color-text-muted)" }}>{"// "}</span>
-            <span style={{ color: "var(--color-text-muted)" }}>ready</span>
-            <span
-              className="cursor-blink"
-              style={{ color: "var(--color-brand)", marginLeft: "2px" }}
-            >
-              |
-            </span>
-          </div>
-        </div>
+        </ScrollReveal>
       </div>
-
-      {/* Floating pill — top right */}
-      <div
-        style={{
-          position: "absolute",
-          top: "-0.75rem",
-          right: "-0.75rem",
-          backgroundColor: "var(--color-brand)",
-          color: "var(--color-background)",
-          borderRadius: "0.625rem",
-          padding: "0.4rem 0.75rem",
-          fontSize: "0.75rem",
-          fontWeight: 700,
-          boxShadow:
-            "0 4px 14px color-mix(in srgb, var(--color-brand) 40%, transparent)",
-        }}
-      >
-        Offline ✓
-      </div>
-
-      {/* Floating pill — bottom left */}
-      <div
-        style={{
-          position: "absolute",
-          bottom: "-0.75rem",
-          left: "-0.75rem",
-          backgroundColor: "var(--color-surface-elevated)",
-          border: "1px solid var(--color-border)",
-          borderRadius: "0.625rem",
-          padding: "0.4rem 0.875rem",
-          fontSize: "0.8125rem",
-          fontWeight: 600,
-          display: "flex",
-          alignItems: "center",
-          gap: "0.4rem",
-          boxShadow:
-            "0 4px 14px color-mix(in srgb, var(--color-background) 50%, transparent)",
-        }}
-      >
-        <span style={{ color: "var(--color-brand)" }}>⬡</span>
-        <span style={{ color: "var(--color-text-primary)" }}>Zero upload</span>
-      </div>
-    </div>
+    </section>
   );
 }

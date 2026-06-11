@@ -1,4 +1,4 @@
-/** StatsBar — compact character / line / byte counts for a text value. */
+/** StatsBar - compact character / line / byte counts for a text value. */
 
 export interface StatsBarProps {
   value: string;

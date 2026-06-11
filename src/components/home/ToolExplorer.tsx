@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * ToolExplorer — client-side search + category filtering over the registry.
+ * ToolExplorer - client-side search + category filtering over the registry.
  * Used on both the home page and the /tools page.
  */
 
@@ -33,7 +33,7 @@ export function ToolExplorer() {
     backgroundColor: active
       ? accent ?? "var(--color-brand)"
       : "var(--color-surface-elevated)",
-    color: active ? "var(--color-background)" : "var(--color-text-secondary)",
+    color: active ? "var(--color-on-brand)" : "var(--color-text-secondary)",
     whiteSpace: "nowrap" as const,
   });
 

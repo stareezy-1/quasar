@@ -1,4 +1,4 @@
-/** ErrorBanner — inline parse/validation error display. */
+/** ErrorBanner - inline parse/validation error display. */
 
 export interface ErrorBannerProps {
   message: string | null;

@@ -6,9 +6,9 @@ import { ROUTES } from "@/constants/routes";
 import { FaqAccordion } from "@/components/home/FaqAccordion";
 
 export const metadata: Metadata = {
-  title: "FAQ — Quasar",
+  title: "FAQ | Quasar",
   description:
-    "Frequently asked questions about Quasar — privacy, offline support, how tools work, and more.",
+    "Frequently asked questions about Quasar: privacy, offline support, how tools work, and more.",
   alternates: { canonical: `${SITE_URL}/faq` },
 };
 
@@ -36,7 +36,7 @@ const FAQS: FaqItem[] = [
   },
   {
     q: "How does the save system work?",
-    a: "Sessions are saved to your browser's localStorage — entirely on your device. There is no cloud sync. Auto-save keeps your last input per tool, and you can create named saves via the Save button inside any tool. Up to 50 named sessions are stored.",
+    a: "Sessions are saved to your browser's localStorage, entirely on your device. There is no cloud sync. Auto-save keeps your last input per tool, and you can create named saves via the Save button inside any tool. Up to 50 named sessions are stored.",
   },
   {
     q: "What data formats are supported?",
@@ -44,7 +44,7 @@ const FAQS: FaqItem[] = [
   },
   {
     q: "Which color formats are supported?",
-    a: "HEX, RGB, HSL, HSV, CMYK, and CSS named colors. Every combination is available — 30 converters total.",
+    a: "HEX, RGB, HSL, HSV, CMYK, and CSS named colors. Every combination is available: 30 converters total.",
   },
   {
     q: "Which unit categories are available?",
@@ -97,7 +97,7 @@ const FAQS: FaqItem[] = [
         >
           Bintang (stareezy.tech)
         </a>{" "}
-        — a front-end &amp; mobile engineer. Part of the Stareezy ecosystem
+        , a front-end &amp; mobile engineer. Part of the Stareezy ecosystem
         alongside{" "}
         <a
           href="https://aurora.stareezy.tech"
@@ -124,7 +124,7 @@ const FAQS: FaqItem[] = [
     q: "Is the source code available?",
     a: (
       <>
-        Yes — open source on{" "}
+        Yes, open source on{" "}
         <a
           href="https://github.com/stareezy-1/quasar"
           target="_blank"
@@ -239,7 +239,7 @@ export default function FaqPage() {
             padding: "0.625rem 1.25rem",
             borderRadius: "0.5rem",
             backgroundColor: "var(--color-brand)",
-            color: "var(--color-background)",
+            color: "var(--color-on-brand)",
             fontWeight: 700,
             fontSize: "0.9375rem",
             textDecoration: "none",

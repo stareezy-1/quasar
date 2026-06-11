@@ -51,12 +51,11 @@ export function Footer() {
             >
               <span
                 style={{
+                  fontFamily: "var(--font-display), sans-serif",
                   fontSize: "1.25rem",
-                  fontWeight: 800,
-                  background:
-                    "linear-gradient(135deg, var(--color-brand), var(--color-accent))",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
+                  fontWeight: 700,
+                  letterSpacing: "-0.03em",
+                  color: "var(--color-brand)",
                 }}
               >
                 Quasar
@@ -71,7 +70,8 @@ export function Footer() {
               }}
             >
               {TOOL_COUNT}+ privacy-first developer tools. Everything runs in
-              your browser — no upload, no account, works offline.
+              your browser, with no upload, no account, and full offline
+              support.
             </p>
             {/* Privacy badge */}
             <div

@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * ColorConverter — single component powering all 23 color converters. It reads
+ * ColorConverter - single component powering all 23 color converters. It reads
  * the from/to formats from the tool id ("{from}-to-{to}"), renders a single
  * input plus a live swatch, and shows the converted value.
  */
@@ -145,7 +145,7 @@ export default function ColorConverter() {
                 color: "var(--color-brand)",
               }}
             >
-              {output || "—"}
+              {output || "..."}
             </span>
           </div>
         </div>

@@ -1,6 +1,6 @@
 "use client";
 
-/** Button — small, theme-aware action button used across tool toolbars. */
+/** Button - small, theme-aware action button used across tool toolbars. */
 
 import type { ButtonHTMLAttributes, ReactNode } from "react";
 
@@ -32,7 +32,7 @@ export function Button({
   const variants = {
     primary: {
       backgroundColor: "var(--color-brand)",
-      color: "var(--color-background)",
+      color: "var(--color-on-brand)",
       border: "1px solid var(--color-brand)",
     },
     secondary: {

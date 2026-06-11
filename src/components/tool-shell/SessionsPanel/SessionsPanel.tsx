@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * SessionsPanel — a collapsible list of saved sessions for the current tool.
+ * SessionsPanel - a collapsible list of saved sessions for the current tool.
  * Lets the user load, rename, or delete a saved session. Local-only.
  */
 
